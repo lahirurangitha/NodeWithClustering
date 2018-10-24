@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
 });
 
 // REGISTER USER ROUTES which are in <userRoutes.js> file
-router.use(userRouter);
+router.use('/users',userRouter);
 
 module.exports = router;
 
