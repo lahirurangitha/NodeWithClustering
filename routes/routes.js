@@ -1,24 +1,17 @@
-// var express    = require('express');  
+const express = require('express');
 
-// // ROUTES FOR  API
-// var appRouter = express.Router(); // get an instance of the express Router
+// ROUTES FOR  API
+const router = express.Router(); // get an instance of the express Router
 
-// // // middleware to use for all requests
-// // appRouter.use(function(req, res, next) {
-// //     // do logging
-// //     console.log('Something is happening.');
-// //     next(); // make sure to the next routes and don't stop here
-// // });
+// // middleware to use for all requests
+// router.use(function(req, res, next) {
+//     // do logging
+//     console.log('Something is happening.');
+//     next(); // make sure to the next routes and don't stop here
+// });
 
+router.get('/', function (req, res) {
+    res.json({ message: 'welcome to api with routes' });
+});
 
-
-// var appRouter = function (app) {
-//     // test route to make sure everything is working (accessed at GET http://localhost:8000/api)
-//     app.get('/', function (req, res) {
-//         res.json({ message: 'welcome to api' });
-//     });
-
-// }
-
-
-// module.exports = appRouter;
+module.exports = router;
