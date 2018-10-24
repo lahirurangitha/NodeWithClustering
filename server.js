@@ -11,7 +11,6 @@ const port = 8000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 // REGISTER ROUTES - all routes will be prefixed with /api
 // app.use('/api', router);
 app.use(router);

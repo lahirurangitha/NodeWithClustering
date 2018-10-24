@@ -1,5 +1,6 @@
 const express = require('express');
 const userRouter = require('./userRoutes.js')
+const fileRouter = require('./fileRoutes.js');
 
 // ROUTES FOR  API
 const router = express.Router(); // get an instance of the express Router
@@ -11,12 +12,14 @@ const router = express.Router(); // get an instance of the express Router
 //     next(); // make sure to the next routes and don't stop here
 // });
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.json({ message: 'welcome to main routes' });
 });
 
 // REGISTER USER ROUTES which are in <userRoutes.js> file
-router.use('/users',userRouter);
+router.use('/users', userRouter);
+
+router.use('/files', fileRouter);
 
 module.exports = router;
 
