@@ -2,7 +2,7 @@
 const express = require('express'); // call express
 const bodyParser = require('body-parser');
 const app = express(); // define our app using express
-const router = require('./routes/routes.js')
+const router = require('./routes/routes.js');
 
 const hostname = 'localhost';
 const port = 8000;

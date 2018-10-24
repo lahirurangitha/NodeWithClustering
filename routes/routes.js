@@ -1,4 +1,5 @@
 const express = require('express');
+const userRouter = require('./userRoutes.js')
 
 // ROUTES FOR  API
 const router = express.Router(); // get an instance of the express Router
@@ -11,7 +12,16 @@ const router = express.Router(); // get an instance of the express Router
 // });
 
 router.get('/', function (req, res) {
-    res.json({ message: 'welcome to api with routes' });
+    res.json({ message: 'welcome to main routes' });
 });
 
+// REGISTER USER ROUTES which are in <userRoutes.js> file
+router.use(userRouter);
+
 module.exports = router;
+
+//The module.exports or exports is a special object which is included
+//in every JS file in the Node.js application by default. 
+//module is a variable that represents current module and exports is
+// an object that will be exposed as a module. So, whatever you assign to module.exports or exports, 
+//will be exposed as a module.
