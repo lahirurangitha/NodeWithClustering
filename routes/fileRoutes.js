@@ -8,7 +8,7 @@ printRouter.get('/', (req, res) => {
     res.json({
         message: 'welcome to file routes',
         filecontent: data,
-        test: 'test'
+        processID: process.pid
     });
 });
 

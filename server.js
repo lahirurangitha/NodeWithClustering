@@ -17,5 +17,5 @@ app.use(router);
 
 // START THE SERVER
 app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log('PID: '+process.pid+ ` Server running at http://${hostname}:${port}/`);
 });

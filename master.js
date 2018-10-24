@@ -15,7 +15,7 @@ if ( cluster.isMaster ) {
 	// Since each Node.js process executes in a single thread, we want to create
 	// Workers based on the number of Cores available on the operating system. This
 	// way, we don't get Workers competing with each other for resources.
-	for ( var i = 0, coreCount = os.cpus().length-1 ; i < coreCount ; i++ ) {
+	for ( var i = 0, coreCount = os.cpus().length ; i < coreCount ; i++ ) {
 
 		var worker = cluster.fork();
 
@@ -51,7 +51,7 @@ if ( cluster.isMaster ) {
 	// logic here. Instead, we want to require it from a different module. This has the
 	// happy side-effect of allowing us to run the application in Cluster mode or in
 	// stand-alone mode by using different entry points (cluster.js vs. server.js).
-	require( "./worker.js" );
+	require( "./server.js" );
 
 	console.log( "Worker has started."+ process.pid );
 
